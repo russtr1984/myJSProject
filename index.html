@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyProject</title>
     <script>
-        
+        function getNames() {
+            var positions = ['Junior developer', 'Middle developer', 'Senior developer', 'Junior QA', 'Middle QA', 'Senior QA', 'Project manager'];
+            var names = [];
+            for (var i = 0; i < positions.length; i++) {
+                names[i] = prompt('Введите имя для должности ' + positions[i]);
+            }
+        }
+        getNames();
     </script>
 </head>
 <body>
