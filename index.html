@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyProject</title>
     <script>
-        function getNames() {
-            var positions = ['Junior developer', 'Middle developer', 'Senior developer', 'Junior QA', 'Middle QA', 'Senior QA', 'Project manager'];
+        function getNames(positions) {
             var names = [];
             for (var i = 0; i < positions.length; i++) {
                 names[i] = prompt('Введите имя для должности ' + positions[i]);
             }
+            return names;
         }
-        getNames();
+        var positions = ['Junior developer', 'Middle developer', 'Senior developer', 'Junior QA', 'Middle QA', 'Senior QA', 'Project manager'];
+        var arrayNames = getNames(positions);
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
