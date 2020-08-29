@@ -13,8 +13,20 @@
             }
             return names;
         }
+        function createTeam(names, positions) {
+            var team = {
+                members: []
+            };
+            for (var i = 0; i < names.length; i++) {
+                team.members[i] = new Object();
+                team.members[i].name = names[i];
+                team.members[i]["position"] = positions[i];
+            }
+            return team;
+        }
         var positions = ['Junior developer', 'Middle developer', 'Senior developer', 'Junior QA', 'Middle QA', 'Senior QA', 'Project manager'];
         var arrayNames = getNames(positions);
+        var team = createTeam(arrayNames, positions);
     </script>
 </head>
 
