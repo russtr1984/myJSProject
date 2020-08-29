@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyProject</title>
     <script>
+        /*1. Заполнение массива имен пользователем*/
         function getNames(positions) {
             var names = [];
             for (var i = 0; i < positions.length; i++) {
@@ -13,6 +14,7 @@
             }
             return names;
         }
+        /*2. Создание объекта команды*/
         function createTeam(names, positions) {
             var team = {
                 members: []
@@ -27,6 +29,7 @@
         function getRandomInt(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
+        /*3. Добавление свойства зарплаты для каждого сотрудника объекта команды согласно их должности*/
         function setSalary(members) {
             for (var i = 0; i < members.length; i++) {
                 if (members[i].position.indexOf('Junior') >= 0) {
@@ -40,6 +43,7 @@
                 }
             }
         }
+        /*4. Добавление метода tellAboutYourSelf для каждого сотрудника*/
         function addMethodTell(members) {
             for (var item in members) {
                 members[item].tellAboutYourSelf = function () {
@@ -56,6 +60,7 @@
         for (var i = 0; i < team.members.length; i++) {
             team.members[i].tellAboutYourSelf();
         }
+        /*5. Добавление метода showTeam для объекта team*/
         team.showTeam = function () {
             console.log("************************");
             console.log("Наша команда:");
