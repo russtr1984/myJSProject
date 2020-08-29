@@ -27,7 +27,7 @@
         function getRandomInt(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
-        function setSalary(members){
+        function setSalary(members) {
             for (var i = 0; i < members.length; i++) {
                 if (members[i].position.indexOf('Junior') >= 0) {
                     members[i].salary = getRandomInt(500, 1000);
@@ -40,10 +40,22 @@
                 }
             }
         }
+        function addMethodTell(members) {
+            for (var item in members) {
+                members[item].tellAboutYourSelf = function () {
+                    console.log("Меня зовут " + this.name + " и я - " + this.position + ". Я зарабатываю " + this.salary + "$.");
+                }
+            }
+        }
         var positions = ['Junior developer', 'Middle developer', 'Senior developer', 'Junior QA', 'Middle QA', 'Senior QA', 'Project manager'];
         var arrayNames = getNames(positions);
         var team = createTeam(arrayNames, positions);
         setSalary(team.members);
+        addMethodTell(team.members);
+        console.log("Сейчас каждый сотрудник расскажет о себе:");
+        for (var i = 0; i < team.members.length; i++) {
+            team.members[i].tellAboutYourSelf();
+        }
     </script>
 </head>
 
